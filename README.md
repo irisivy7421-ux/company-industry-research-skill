@@ -41,7 +41,7 @@ flowchart LR
 安装后，直接提出研究请求即可：
 
 ```text
-研究一下阿里云
+研究一下英伟达
 ```
 
 若你没有指定研究深度，Skill 只会先问一句：
@@ -116,22 +116,22 @@ Skill 默认优先创建飞书文档，但**不会假定所有平台都能写入
 
 ### Codex
 
-在 macOS 或 Linux 终端执行下面这条命令，即可安装固定的 `v4.2.1` 版本到 Codex 默认 Skills 目录：
+在 macOS 或 Linux 终端执行下面这条命令，即可安装固定的 `v4.2.2` 版本到 Codex 默认 Skills 目录：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.1/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.2/scripts/install.sh | bash
 ```
 
 安装脚本会下载已标记的发布版本，检查 `SKILL.md`，并将旧版本移动到带时间戳的备份目录，不会静默删除。若你使用自定义 Skills 目录：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.1/scripts/install.sh | bash -s -- --target /your/skills-directory
+curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.2/scripts/install.sh | bash -s -- --target /your/skills-directory
 ```
 
 不希望直接执行远程脚本时，可以先下载、审阅后再运行：
 
 ```bash
-curl -fL -o install.sh https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.1/scripts/install.sh
+curl -fL -o install.sh https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.2/scripts/install.sh
 bash install.sh
 ```
 
@@ -167,7 +167,7 @@ company-industry-research-v4/
 
 ```bash
 bash scripts/validate-package.sh
-git archive --format=zip --prefix=company-industry-research-v4/ v4.2.1 -o ../company-industry-research-v4.2.zip
+git archive --format=zip --prefix=company-industry-research-v4/ v4.2.2 -o ../company-industry-research-v4.2.zip
 unzip -t ../company-industry-research-v4.2.zip
 ```
 
