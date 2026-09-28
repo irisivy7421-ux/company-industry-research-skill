@@ -116,11 +116,30 @@ Skill 默认优先创建飞书文档，但**不会假定所有平台都能写入
 
 ### Codex
 
-将本目录放入本机的 Skills 目录（通常为 `~/.codex/skills/`），重启或刷新 Skills 后使用。目录名保持为 `company-industry-research-v4`。
+在 macOS 或 Linux 终端执行下面这条命令，即可安装固定的 `v4.2.0` 版本到 Codex 默认 Skills 目录：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.0/scripts/install.sh | bash
+```
+
+安装脚本会下载已标记的发布版本，检查 `SKILL.md`，并将旧版本移动到带时间戳的备份目录，不会静默删除。若你使用自定义 Skills 目录：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.0/scripts/install.sh | bash -s -- --target /your/skills-directory
+```
+
+不希望直接执行远程脚本时，可以先下载、审阅后再运行：
+
+```bash
+curl -fL -o install.sh https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.0/scripts/install.sh
+bash install.sh
+```
+
+安装完成后重启或刷新 Codex Skills。目录名保持为 `company-industry-research-v4`。
 
 ### 豆包工作或其他支持自定义 Skill 的平台
 
-上传本仓库的 ZIP 压缩包，或按目标平台的规范上传完整目录。平台是否真正具备飞书文档与画板写入权限，需要在首次运行时验证；Skill 会根据真实能力降级，不应虚构链接或画板预览。
+上传 GitHub 的 ZIP 源码包或本仓库完整目录，按目标平台的规范安装。不同平台没有统一的本地 Skills 安装路径，因此上面的命令不能替代豆包工作的上传入口。平台是否真正具备飞书文档与画板写入权限，需要在首次运行时验证；Skill 会根据真实能力降级，不应虚构链接或画板预览。
 
 ## 项目结构
 
