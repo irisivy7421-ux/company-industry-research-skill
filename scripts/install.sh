@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 
 REPOSITORY="irisivy7421-ux/company-industry-research-skill"
-REF="v4.2.2"
+REF="v4.2.3"
 SKILL_DIR_NAME="company-industry-research-v4"
 TARGET_DIR="${CODEX_HOME:-$HOME/.codex}/skills"
 

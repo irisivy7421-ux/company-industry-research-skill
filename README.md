@@ -1,13 +1,17 @@
-# 企业与行业研究 Skill
+# 方案前置洞察 Skill
 
-把“研究一下这家公司”转成一个可复用、可验收的研究交付流程：先确认研究深度，再根据当前平台能力选择飞书文档、本地文件或对话交付；无论快速版或深度版，均要求输出可阅读的报告、对话中的关键结论，以及一张概括全篇的总览画板。
+把“研究一下这家公司”转成一份服务于后续方案撰写的前置洞察：先确认研究深度，再根据当前平台能力选择飞书文档、本地文件或对话交付；无论快速版或深度版，均要求输出可阅读的报告、对话中的关键结论，以及一张概括全篇的总览画板。
 
 > 当前版本：**V4.2**  
-> 适用对象：需要研究公司、品牌、业务平台、行业格局或产业链的人。
+> 中文名称：**方案前置洞察**
+>
+> 适用对象：需要撰写客户方案、企业故事、行业叙事或战略材料的人。
+
+技术安装标识仍为 `company-industry-research-v4`，这样不会破坏已经安装的版本和安装命令。
 
 ## 它解决什么问题
 
-普通研究提示词往往会产出一篇内容齐全但不易判断、也不易复用的长文。本 Skill 将研究拆成四个不可混淆的环节：先选择深度，确认交付能力，再形成有证据边界的判断，最后验证交付物是否真实存在。
+普通公司研究往往会产出一篇内容齐全但无法直接转化为方案的长文。本 Skill 将前置洞察拆成四个不可混淆的环节：先选择深度，确认交付能力，再形成有证据边界、可转化为方案判断的洞察，最后验证交付物是否真实存在。
 
 ```mermaid
 flowchart LR
@@ -27,7 +31,7 @@ flowchart LR
 
 | 维度 | 快速版 | 深度版 |
 | --- | --- | --- |
-| 适用场景 | 快速理解、故事选题、下一步访谈 | 正式汇报、战略判断、公开材料 |
+| 适用场景 | 快速提炼方案切入点、故事选题、下一步访谈 | 正式方案、战略判断、公开材料 |
 | 研究重点 | 中心判断、关键事实、竞争替代、风险 | 基本面、行业、产业链、竞争、PEST、SWOT 与战略展望 |
 | 正文篇幅 | 只展开会改变判断的内容 | 完整展开，并说明事实、推断与未知 |
 | 对话摘要 | 必须 | 必须 |
@@ -47,8 +51,8 @@ flowchart LR
 若你没有指定研究深度，Skill 只会先问一句：
 
 ```text
-你希望使用快速版还是深度版？快速版适合快速理解和故事选题；
-深度版适合正式汇报、战略判断或公开材料。
+你希望使用快速版还是深度版？快速版适合快速提炼方案切入点和故事选题；
+深度版适合正式方案、战略判断或公开材料。
 ```
 
 也可以一次说清：
@@ -105,7 +109,7 @@ Skill 默认优先创建飞书文档，但**不会假定所有平台都能写入
 每次研究的最终回复都包含以下字段，便于判断交付是否真的完成：
 
 ```text
-执行版本：company-industry-research-v4 / 4.2
+执行版本：方案前置洞察（company-industry-research-v4 / 4.2）
 研究模式：快速版或深度版
 交付通道：FEISHU / FILES / CHAT
 报告状态：已创建 / 已降级 / 失败
@@ -116,22 +120,22 @@ Skill 默认优先创建飞书文档，但**不会假定所有平台都能写入
 
 ### Codex
 
-在 macOS 或 Linux 终端执行下面这条命令，即可安装固定的 `v4.2.2` 版本到 Codex 默认 Skills 目录：
+在 macOS 或 Linux 终端执行下面这条命令，即可安装固定的 `v4.2.3` 版本到 Codex 默认 Skills 目录：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.2/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.3/scripts/install.sh | bash
 ```
 
 安装脚本会下载已标记的发布版本，检查 `SKILL.md`，并将旧版本移动到带时间戳的备份目录，不会静默删除。若你使用自定义 Skills 目录：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.2/scripts/install.sh | bash -s -- --target /your/skills-directory
+curl -fsSL https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.3/scripts/install.sh | bash -s -- --target /your/skills-directory
 ```
 
 不希望直接执行远程脚本时，可以先下载、审阅后再运行：
 
 ```bash
-curl -fL -o install.sh https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.2/scripts/install.sh
+curl -fL -o install.sh https://raw.githubusercontent.com/irisivy7421-ux/company-industry-research-skill/v4.2.3/scripts/install.sh
 bash install.sh
 ```
 
@@ -167,7 +171,7 @@ company-industry-research-v4/
 
 ```bash
 bash scripts/validate-package.sh
-git archive --format=zip --prefix=company-industry-research-v4/ v4.2.2 -o ../company-industry-research-v4.2.zip
+git archive --format=zip --prefix=company-industry-research-v4/ v4.2.3 -o ../company-industry-research-v4.2.zip
 unzip -t ../company-industry-research-v4.2.zip
 ```
 
